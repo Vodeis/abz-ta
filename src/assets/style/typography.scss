@@ -1,0 +1,45 @@
+*,
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
+  background: #f8f8f8;
+
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.text {
+  text-align: center;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: inherit;
+  text-align: center;
+  font-size: 16px;
+  line-height: 26px;
+
+  padding: 4px 0;
+  border-radius: 80px;
+  border: none;
+  background: #f4e041;
+
+  width: 100px;
+  cursor: pointer;
+}

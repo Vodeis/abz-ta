@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="wrapper">
+    <Header />
+    <Intro />
+    <Users />
+    <Form />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import "reset-css";
+import Header from "./components/Header.vue";
+import Intro from "./components/Intro.vue";
+import Users from "./components/Users.vue";
+import Form from "./components/Form.vue";
 
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
+  components: { Header, Intro, Users, Form },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url(./assets/style/typography.scss);
+
+.wrapper {
+  max-width: 1170px;
+  min-width: 360px;
+  margin: 0 auto;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 </style>
