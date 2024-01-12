@@ -1,4 +1,3 @@
-<!-- eslint-disable -->
 <template>
   <section id="signUp" class="post_section container">
     <h1 class="title">{{ form.title }}</h1>
@@ -45,7 +44,12 @@
       <div class="position__container">
         <p class="text">{{ form.positionLabel }}</p>
         <label v-for="(label, i) of form.positions" :key="i">
-          <input v-model="position" :value="i + 1" type="radio" name="position" />
+          <input
+            v-model="position"
+            :value="i + 1"
+            type="radio"
+            name="position"
+          />
           <span>{{ label }}</span>
         </label>
       </div>
@@ -57,10 +61,20 @@
             loadedFileName ? loadedFileName : form.uploadPlaceholder
           }}</span>
         </div>
-        <input type="file" accept="image/jpg, image/jpeg" @change="validateImg" ref="inputImg" />
+        <input
+          type="file"
+          accept="image/jpg, image/jpeg"
+          @change="validateImg"
+          ref="inputImg"
+        />
       </label>
 
-      <button class="btn" :class="{ disabled: disabledBtn }" :disabled="disabledBtn" type="submit">
+      <button
+        class="btn"
+        :class="{ disabled: disabledBtn }"
+        :disabled="disabledBtn"
+        type="submit"
+      >
         {{ btns.signUp }}
       </button>
     </form>
@@ -178,13 +192,6 @@ export default {
       } else {
         this.disabledBtn = true;
       }
-      // console.log(
-      //   this.name,
-      //   this.validateEmail(this.email),
-      //   this.validatePhoneNumber(this.phone),
-      //   this.position,
-      //   this.photo
-      // );
     },
     clearData() {
       this.name = "";
@@ -221,8 +228,11 @@ export default {
       if (response && response.data.success) {
         this.clearData();
       }
-      // eslint-disable-next-line
-      if (response && !response.data.success && response.data.message === "The token expired.")
+      if (
+        response &&
+        !response.data.success &&
+        response.data.message === "The token expired."
+      )
         this.needNewToken = true;
     },
   },
